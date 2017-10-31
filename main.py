@@ -140,7 +140,7 @@ def train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_l
     :param sess: TF Session
     :param epochs: Number of epochs
     :param batch_size: Batch size
-    :param get_batches_fn: Function to get batches of training data.  Call using get_batches_fn(batch_size)
+    :param get_batches_fn: Function to get batches of training data. Call using get_batches_fn(batch_size)
     :param train_op: TF Operation to train the neural network
     :param cross_entropy_loss: TF Tensor for the amount of loss
     :param input_image: TF Placeholder for input images
@@ -148,8 +148,17 @@ def train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_l
     :param keep_prob: TF Placeholder for dropout keep probability
     :param learning_rate: TF Placeholder for learning rate
     """
-	# TODO: Implement function
-	pass
+
+	print("Training...\n")
+	ep_num = 0
+    for epoch in epochs:
+    	ep_num += 1
+        print("EPOCH {} ...\n".format(ep_num))
+        for image, label in get_batches_fn(batch_size):
+        	# Training
+            _, loss = sess.run([train_op, cross_entropy_loss], 
+                               feed_dict={input_image: image, correct_label: label,                                keep_prob: 0.5, learning_rate: 0.0009})
+            print("Loss: = {:.4f}".format(loss))
 
 
 tests.test_train_nn(train_nn)
