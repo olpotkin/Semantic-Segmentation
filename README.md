@@ -1,7 +1,23 @@
 # Semantic Segmentation
 
+[image1]: ./imgs/img_01.png "image"
+[image2]: ./imgs/img_02.png "image"
+[image3]: ./imgs/img_03.png "image"
+[image4]: ./imgs/img_04.png "image"
+[image5]: ./imgs/img_05.png "image"
+
 ### Introduction
-In this project the goal is to label the pixels of a road in images using a Fully Convolutional Network (FCN).
+Semantic segmentation attempts to partition the image into semantically meaningful parts, and to classify each part into one of the pre-determined classes. 
+
+In this project the goal is to label the pixels of a road in images using a Fully Convolutional Network (FCN) i.e. to train segmentation networks, which paint each pixel of the image a different color, based on its class. Use segmented images to find free space on the road.
+
+Results:
+
+![alt text][image1]
+![alt text][image2]
+![alt text][image3]
+![alt text][image4]
+![alt text][image5]
 
 ### Setup
 ##### Frameworks and Packages
